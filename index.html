@@ -2,23 +2,40 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <!-- SEO On-Page: Meta viewport responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO On-Page: Título único -->
     <title>Franco Parisaca - Desarrollador Web</title>
+
+    <!-- SEO On-Page: Meta description -->
     <meta
       name="description"
-      content="Portafolio de Franco Parisaca, desarrollador web frontend especializado en HTML, CSS, JavaScript y accesibilidad A11y."
+      content="Portafolio de Franco Parisaca, desarrollador web full stack especializado en desarrollo móvil, frontend y backend con enfoque en accesibilidad y SEO."
     />
 
     <!-- Estilos -->
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- Datos estructurados Schema.org -->
-    <script type="application/ld+json" src="script.json"></script>
+    <!-- Por si acaso se creo el scrip.json para usarlo con javascript -->
+    <!-- Datos estructurados Schema.org (SEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Franco Parisaca",
+        "jobTitle": "Desarrollador Full Stack",
+        "url": "https://franco-parisaca.dev",
+        "image": "https://avatars.githubusercontent.com/u/82979577?s=96&v=4",
+        "sameAs": ["https://github.com/FrancoEnriquePM"]
+      }
+    </script>
   </head>
   <body>
-    <!-- Skip link -->
+    <!-- A11y: Skip link para saltar al contenido -->
     <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
 
+    <!-- HTML semántico: Header landmark -->
     <header role="banner">
       <h1>Franco Parisaca</h1>
       <p>Desarrollador Full Stack</p>
@@ -32,9 +49,11 @@
       </nav>
     </header>
 
+    <!-- HTML semántico: Main landmark -->
     <main id="contenido" role="main">
       <section id="sobre-mi" class="grid grid-2">
         <aside>
+          <!-- A11y: imagen con alt -->
           <img
             src="images/portafolio.jpeg"
             alt="Foto de Franco Parisaca"
@@ -58,8 +77,12 @@
       <section id="experiencia">
         <h2>Experiencia</h2>
         <article class="card">
-          <h3>Desarrollador movil - Farmedical</h3>
-          <p>2022 - Presente</p>
+          <h3>Desarrollador móvil - Farmedical</h3>
+          <!-- SEO semántico: uso de <time> -->
+          <p>
+            <time datetime="2022">2022</time> -
+            <time datetime="2025">Presente</time>
+          </p>
           <p>
             Desarrollo de aplicaciones multiplataforma utilizando Flutter, así
             como experiencia en React.js para el frontend y MySQL con PHP para
@@ -69,7 +92,10 @@
         </article>
         <article class="card">
           <h3>Diseñador Web - Freelancer</h3>
-          <p>2020 - 2022</p>
+          <p>
+            <time datetime="2020">2020</time> -
+            <time datetime="2022">2022</time>
+          </p>
           <p>
             Desarrollo de sitios web a medida para clientes de diversos
             sectores, implementando soluciones personalizadas con HTML, CSS y
@@ -81,38 +107,41 @@
 
       <section id="proyectos">
         <h2>Proyectos</h2>
-        <article class="card">
-          <h3>Portafolio personal</h3>
-          <p>
-            Un sitio web responsive con HTML, CSS y JS, optimizado para
-            accesibilidad y SEO.
-          </p>
-          <a
-            href="https://github.com/FrancoEnriquePM/portafolio"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Ver proyecto</a
-          >
-        </article>
-        <article class="card">
-          <h3>Vivienda ideal</h3>
-          <p>
-            Aplicación web desarrollada con EJS y JavaScript (Node.js) para
-            gestionar tareas, permitiendo crear, editar y eliminar elementos de
-            manera eficiente.
-          </p>
-          <a
-            href="https://github.com/FrancoEnriquePM/viviendaidealsrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Ver proyecto</a
-          >
-        </article>
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Portafolio personal</h3>
+            <p>
+              Un sitio web responsive con HTML, CSS y JS, optimizado para
+              accesibilidad y SEO.
+            </p>
+            <a
+              href="https://github.com/FrancoEnriquePM/portafolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver proyecto</a
+            >
+          </article>
+          <article class="card">
+            <h3>Vivienda ideal</h3>
+            <p>
+              Aplicación web desarrollada con EJS y JavaScript (Node.js) para
+              gestionar tareas, permitiendo crear, editar y eliminar elementos
+              de manera eficiente.
+            </p>
+            <a
+              href="https://github.com/FrancoEnriquePM/viviendaidealsrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver proyecto</a
+            >
+          </article>
+        </div>
       </section>
 
       <section id="contacto">
         <h2>Contacto</h2>
-        <form action="/enviar-formulario" method="post">
+        <!-- A11y: role form -->
+        <form action="/enviar-formulario" method="post" role="form">
           <label for="nombre">Nombre</label>
           <input type="text" id="nombre" name="nombre" required />
 
@@ -127,7 +156,8 @@
       </section>
     </main>
 
-    <footer role="contentinfo">
+    <!-- HTML semántico: Footer landmark -->
+    <footer role="contentinfo" aria-label="Información del sitio">
       <p>&copy; 2025 Franco Parisaca - Todos los derechos reservados</p>
     </footer>
   </body>
