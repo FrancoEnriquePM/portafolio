@@ -5,13 +5,12 @@
     <!-- SEO On-Page: Meta viewport responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO On-Page: Título único -->
-    <title>Franco Parisaca - Desarrollador Web</title>
+    <title>Franco Parisaca - Desarrollador Web Full Stack</title>
 
     <!-- SEO On-Page: Meta description -->
     <meta
       name="description"
-      content="Portafolio de Franco Parisaca, desarrollador web full stack especializado en desarrollo móvil, frontend y backend con enfoque en accesibilidad y SEO."
+      content="Portafolio de Franco Parisaca, desarrollador web full stack especializado en desarrollo móvil, frontend y backend. Enfoque en accesibilidad (A11y) y optimización para motores de búsqueda (SEO)."
     />
 
     <!-- Estilos -->
@@ -35,34 +34,54 @@
     <!-- A11y: Skip link para saltar al contenido -->
     <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
 
-    <!-- HTML semántico: Header landmark -->
-    <header role="banner">
+    <header>
       <h1>Franco Parisaca</h1>
       <p>Desarrollador Full Stack</p>
-      <nav role="navigation" aria-label="Menú principal">
+      <nav aria-label="Menú de navegación principal">
         <ul>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#experiencia">Experiencia</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li>
+            <a href="#sobre-mi" aria-label="Navegar a la sección Sobre mí"
+              >Sobre mí</a
+            >
+          </li>
+          <li>
+            <a
+              href="#experiencia"
+              aria-label="Navegar a la sección Experiencia laboral"
+              >Experiencia</a
+            >
+          </li>
+          <li>
+            <a href="#proyectos" aria-label="Navegar a la sección Proyectos"
+              >Proyectos</a
+            >
+          </li>
+          <li>
+            <a href="#contacto" aria-label="Navegar a la sección Contacto"
+              >Contacto</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
 
-    <!-- HTML semántico: Main landmark -->
-    <main id="contenido" role="main">
-      <section id="sobre-mi" class="grid grid-2">
+    <main id="contenido">
+      <section
+        id="sobre-mi"
+        class="grid grid-2"
+        aria-labelledby="heading-sobre-mi"
+      >
         <aside>
           <!-- A11y: imagen con alt -->
           <img
             src="images/portafolio.jpeg"
-            alt="Foto de Franco Parisaca"
+            alt="Foto de Franco Parisaca sonriendo, desarrollador web full stack."
             width="200"
             loading="lazy"
           />
         </aside>
         <article>
-          <h2>Sobre mí</h2>
+          <h2 id="heading-sobre-mi">Sobre mí</h2>
           <p>
             Soy desarrollador especializado en desarrollo móvil, creando
             aplicaciones nativas y multiplataforma con un enfoque en rendimiento
@@ -74,8 +93,8 @@
         </article>
       </section>
 
-      <section id="experiencia">
-        <h2>Experiencia</h2>
+      <section id="experiencia" aria-labelledby="heading-experiencia">
+        <h2 id="heading-experiencia">Experiencia</h2>
         <article class="card">
           <h3>Desarrollador móvil - Farmedical</h3>
           <!-- SEO semántico: uso de <time> -->
@@ -105,8 +124,8 @@
         </article>
       </section>
 
-      <section id="proyectos">
-        <h2>Proyectos</h2>
+      <section id="proyectos" aria-labelledby="heading-proyectos">
+        <h2 id="heading-proyectos">Proyectos</h2>
         <div class="grid grid-2">
           <article class="card">
             <h3>Portafolio personal</h3>
@@ -118,7 +137,7 @@
               href="https://github.com/FrancoEnriquePM/portafolio"
               target="_blank"
               rel="noopener noreferrer"
-              >Ver proyecto</a
+              >Ver proyecto en GitHub</a
             >
           </article>
           <article class="card">
@@ -132,16 +151,15 @@
               href="https://github.com/FrancoEnriquePM/viviendaidealsrl"
               target="_blank"
               rel="noopener noreferrer"
-              >Ver proyecto</a
+              >Ver proyecto en GitHub</a
             >
           </article>
         </div>
       </section>
 
-      <section id="contacto">
-        <h2>Contacto</h2>
-        <!-- A11y: role form -->
-        <form action="/enviar-formulario" method="post" role="form">
+      <section id="contacto" aria-labelledby="heading-contacto">
+        <h2 id="heading-contacto">Contacto</h2>
+        <form action="/enviar-formulario" method="post">
           <label for="nombre">Nombre</label>
           <input type="text" id="nombre" name="nombre" required />
 
@@ -156,8 +174,7 @@
       </section>
     </main>
 
-    <!-- HTML semántico: Footer landmark -->
-    <footer role="contentinfo" aria-label="Información del sitio">
+    <footer>
       <p>&copy; 2025 Franco Parisaca - Todos los derechos reservados</p>
     </footer>
   </body>
